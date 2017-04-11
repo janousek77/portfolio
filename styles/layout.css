@@ -1,0 +1,56 @@
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.heading-group-h1 {
+  max-width: 80%;
+}
+
+#filters select {
+  width: 90%;
+  margin: .2em 5%;
+}
+
+@media only screen and (min-width: 640px) {
+  .heading-group-h1 {
+    padding: .1em .1em .1em 2em;
+    float: none;
+  }
+
+  #filters select {
+    width: 15em;
+    margin: .2em .2em;
+  }
+
+  #filters li {
+    width: 20em;
+    display: inline;
+  }
+}
+
+@media(min-width: 700px){
+  aside {
+    width: 24%;
+    height: 100%;
+    float: left;
+    border: 1px solid white;
+  }
+}
+
+@media(min-width: 700px){
+  main {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+}

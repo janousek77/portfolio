@@ -1,0 +1,48 @@
+
+body {
+  line-height: 1.5;
+  font-size: 100%;
+  color: #313131;
+}
+
+hr {
+  margin: 1em;
+  width: 80%;
+}
+
+p {
+  font-size: 1em;
+}
+
+address {
+  display: inline-block;
+}
+
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #777;
+}
+
+a:hover, a:focus {
+  color: #29506D;
+}
+
+a:visited {
+}
+
+img {
+  width: 100%;
+}
+
+p{
+  text-align: justify;
+}
+
+@media(min-width: 700px){
+  .top{
+    width: 49%;
+    float: left;
+    margin: 0;
+  }
+}
