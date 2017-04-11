@@ -1,3 +1,7 @@
+html{
+  min-width: 300px;
+}
+
 .site-header {
 }
 
@@ -6,13 +10,22 @@
   padding: 0 0 .2em 1em;
 }
 
+@media(min-width: 600px){
+  .heading-group-h1 {
+    float: none;
+    text-align: center;
+    margin: 0px auto;
+  }
+}
+
+
 .icon-menu:before {
 	float: right;
   font-size: 2.2em;
   margin-top: .4em;
 }
 
-@media(min-width: 800px){
+@media(min-width: 600px){
   .icon-menu:before {
     display: none;
   }
@@ -33,7 +46,7 @@
   display: block;
 }
 
-@media(min-width: 800px){
+@media(min-width: 600px){
   .main-nav ul {
     display: inherit;
     text-align: center;
@@ -47,7 +60,7 @@
   border-bottom: 1px solid #ccc;
 }
 
-@media(min-width: 800px){
+@media(min-width: 600px){
   .main-nav li {
     display: inline;
     margin-left: 2em;

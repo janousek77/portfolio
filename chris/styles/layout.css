@@ -37,3 +37,20 @@
     display: inline;
   }
 }
+
+@media(min-width: 600px){
+  aside {
+    width: 24%;
+    height: 100%;
+    float: left;
+    border: 1px solid white;
+  }
+}
+
+@media(min-width: 600px){
+  main {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
+}
