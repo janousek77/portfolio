@@ -23,6 +23,8 @@ html{
 	float: right;
   font-size: 2.2em;
   margin-top: .4em;
+  position: fixed;
+  right: 1em;
 }
 
 @media(min-width: 700px){
