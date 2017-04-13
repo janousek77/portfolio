@@ -12,6 +12,8 @@ hr {
 
 p {
   font-size: 1em;
+  text-align: justify;
+  color: #777;
 }
 
 address {
@@ -33,10 +35,6 @@ a:visited {
 
 img {
   width: 100%;
-}
-
-p{
-  text-align: justify;
 }
 
 @media(min-width: 700px){

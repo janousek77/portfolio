@@ -24,15 +24,6 @@ html{
   margin-top: .4em;
 }
 
-/*@media(min-width: 400px){
-  .icon-menu:before {
-    font-size: 2.2em;
-    margin-top: .4em;
-    position: fixed;
-    right: 1em;
-  }
-}*/
-
 @media(min-width: 700px){
   .icon-menu:before {
     display: none;
@@ -54,16 +45,6 @@ html{
   display: block;
 }
 
-/*@media(min-width: 400px){
-  .main-nav ul {
-    display: none;
-    padding: 0;
-    list-style: none;
-    clear: both;
-    position: fixed;
-    top: 3em;
-  }
-}*/
 
 @media(min-width: 700px){
   .main-nav ul {
@@ -109,9 +90,15 @@ html{
 h2{
   text-align: center;
   margin: auto;
+  color: #777;
 }
 
 h4{
   text-align: center;
   margin: auto;
+  color: #777;
+}
+
+h1{
+  color: #777;
 }
