@@ -37,6 +37,15 @@ img {
   width: 100%;
 }
 
+.icon{
+  width: 2vw;
+  margin: 1vw;
+}
+
+#social a:first-child{
+  margin-left: 3.8vw;
+}
+
 @media(min-width: 700px){
   .top{
     width: 49%;

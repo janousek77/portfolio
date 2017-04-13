@@ -7,19 +7,19 @@ var projectData = [
     title:       'Project Animal Rescue',
     image:       'images/par.png',
     link:        'https://janousek77.github.io/PAR/',
-    deployedOn:  '2017-03-05'
+    deployedOn:  '2017-03-31'
   },
   {
     title:       'Bus Mall',
     image:       'images/bus.png',
     link:        'https://janousek77.github.io/bus-mall/',
-    deployedOn:  '2017-03-05'
+    deployedOn:  '2017-03-24'
   },
   {
     title:       'Cookie Store',
     image:       'images/cookie.png',
     link:        'https://janousek77.github.io/cookie-stand/',
-    deployedOn:  '2017-03-05'
+    deployedOn:  '2017-03-17'
   }
 ];
 
