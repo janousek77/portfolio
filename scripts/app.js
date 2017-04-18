@@ -11,15 +11,11 @@ function Article (obj) {
 }
 
 Article.prototype.toHtml = function() {
-  var $newArticle = $('article.template').clone();
-  $newArticle.removeClass('template');
-  if (!this.deployedOn) $newArticle.addClass('draft');
-  $newArticle.find('h2').text(this.title);
-  $newArticle.find('.article-body').html(this.body);
-  $newArticle.find('img').attr('src', this.image);
-  $newArticle.find('a').attr('href', this.link);
-  $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.deployedOn))/60/60/24/1000) + ' days ago');
-  return $newArticle;
+  var template = $('#article-template').html();
+  var render = Handlebars.compile(template);
+  this.daysAgo = parseInt((new Date() - new Date(this.deployedOn))/60/60/24/1000);
+  this.publishStatus = this.deployedOn ? `published ${this.daysAgo} days ago` : '(draft)';
+  return render(this);
 };
 
 projectData.sort(function(a,b) {
