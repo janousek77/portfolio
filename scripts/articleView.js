@@ -2,12 +2,12 @@
 
 var articleView = {};
 
-
 articleView.handleMainNav = function() {
   $('.main-nav .tab').on('click', function(){
-    $('.content').hide();
+    $('.tab-content').hide();
     $('#' + $(this).attr('data-content')).show();
   })
+  $('.main-nav .tab:first').click();
 };
 
 articleView.setTeasers = function() {
