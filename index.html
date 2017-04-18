@@ -8,9 +8,18 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script id="article-template" type="text/x-handlebars-template">
+    <h2 id="title">{{title}}</h2>
+    <a href="{{link}}"><img src="{{image}}" alt=""></a>
+    <div class="byline">
+    Deployed <time pubdate datetime="2000-01-01">{{deployedOn}}</time>
+    </div>
+    <section class="article-body">{{body}}</section>
+  </script>
+
 </head>
 <body>
   <header class="site-header clearfix">
@@ -30,17 +39,7 @@
   </header>
   <aside class="left"></aside>
   <main>
-  <section id="articles" class="content">
-      <article class="template" data-category="cat">
-          <h2 id="title">Title</h2>
-          <a href="#"><img src="" alt=""></a>
-          <div class="byline">
-            <address><a href=""></a></address>
-            Deployed <time pubdate datetime="2000-01-01">Publish Time</time>
-          </div>
-        <section class="article-body"></section>
-      </article>
-    </section>
+  <section id="articles" class="tab-content"></section>
   <section id="about" class="top content">
       <header>
         <h2>About Me</h2>
