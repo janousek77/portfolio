@@ -8,6 +8,7 @@ articleView.handleMainNav = function() {
     $('.content').hide();
     $('#' + $(this).attr('data-content')).show();
   })
+  $()
 };
 
 articleView.setTeasers = function() {
