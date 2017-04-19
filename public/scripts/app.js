@@ -1,31 +1,41 @@
 'use strict';
 
-var articles = [];
-
-function Article (obj) {
-  this.title = obj.title;
-  this.link = obj.link;
-  this.image = obj.image;
-  this.deployedOn = obj.deployedOn;
-  this.body = obj.body;
+function Article (rawDataObj) {
+  this.title = rawDataObj.title;
+  this.link = rawDataObj.link;
+  this.image = rawDataObj.image;
+  this.publishedOn = rawDataObj.publishedOn;
+  this.body = rawDataObj.body;
 }
+Article.all = [];
 
 Article.prototype.toHtml = function() {
-  var template = $('#article-template').html();
-  var render = Handlebars.compile(template);
-  this.daysAgo = parseInt((new Date() - new Date(this.deployedOn))/60/60/24/1000);
-  this.publishStatus = this.deployedOn ? `published ${this.daysAgo} days ago` : '(draft)';
-  return render(this);
+  let template = Handlebars.compile($('#article-template').text());
+
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
+  return template(this);
 };
 
-projectData.sort(function(a,b) {
-  return (new Date(b.deployedOn)) - (new Date(a.deployedOn));
-});
+Article.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
 
-projectData.forEach(function(articleObject) {
-  articles.push(new Article(articleObject));
-});
+  rawData.forEach(function(ele) {
+    Article.all.push(new Article(ele));
+  })
+}
 
-articles.forEach(function(article) {
-  $('#articles').append(article.toHtml());
-});
+Article.fetchAll = function() {
+  if (localStorage.rawData) {
+    Article.loadAll(JSON.parse(localStorage.rawData));
+    articleView.initIndexPage();
+  } else {
+    $.getJSON('data/projectData.json').then(function(rawData){
+      Article.loadAll(rawData);
+      localStorage.rawData = JSON.stringify(rawData);
+      Article.initIndexPage();
+    });
+  }
+};
