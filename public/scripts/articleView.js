@@ -7,26 +7,9 @@ articleView.handleMainNav = function() {
     $('.tab-content').hide();
     $(`#${$(this).data('content')}`).fadeIn();
   });
-
-  // $('.main-nav .tab:first').click();
+  $('.main-nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
-  $('.article-body *:nth-of-type(n+2)').hide();
-  $('article').on('click', 'a.read-on', function(e) {
-    e.preventDefault();
-    if ($(this).text() === 'Read on →') {
-      $(this).parent().find('*').fadeIn();
-      $(this).html('Show Less &larr;');
-    } else {
-      $('body').animate({
-        scrollTop: ($(this).parent().offset().top)
-      },200);
-      $(this).html('Read on &rarr;');
-      $(this).parent().find('.article-body *:nth-of-type(n+2)').hide();
-    }
-  });
-};
 
 articleView.initNewArticlePage = function() {
   $('.tab-content').show();
