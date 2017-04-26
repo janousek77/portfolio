@@ -1,28 +1,19 @@
 'use strict';
 
-var articleView = {};
-
+const articleView = {};
 
 articleView.handleMainNav = function() {
-  $('.main-nav .tab').on('click', function(){
-    $('.content').hide();
-    $('#' + $(this).attr('data-content')).show();
-  })
-  // $('.main-nav .tab:first').click();
+  $('.main-nav').on('click', '.tab', function() {
+    $('.tab-content').hide();
+    $(`#${$(this).data('content')}`).fadeIn();
+  });
+
+  $('.main-nav .tab:first').click();
 };
 
-articleView.setTeasers = function() {
-  $('.article-body *:nth-of-type(n+2)').hide();
-  $('.read-on').on('click', function(event){
-    event.preventDefault();
-    var $theLink = $(this);
-    var $theArticleBody = $theLink.siblings('.article-body');
-    $theArticleBody.children().show();
-    $(this).hide()
-  })
-};
-
-$(document).ready(function() {
+articleView.initIndexPage = function() {
+  Article.all.forEach(function(article){
+    $('#articles').append(article.toHtml())
+  });
   articleView.handleMainNav();
-  articleView.setTeasers();
-})
+};

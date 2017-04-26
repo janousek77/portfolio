@@ -15,7 +15,7 @@
     <h2 id="title">{{title}}</h2>
     <a href="{{link}}"><img src="{{image}}" alt=""></a>
     <div class="byline">
-    Deployed <time pubdate datetime="2000-01-01">{{deployedOn}}</time>
+    Deployed <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
     </div>
     <section class="article-body">{{body}}</section>
   </script>
@@ -68,8 +68,10 @@
   <aside class="right"></aside>
   <footer>
   </footer>
-  <script type="text/javascript" src="scripts/projectData.js"></script>
   <script type="text/javascript" src="scripts/app.js"></script>
   <script type="text/javascript" src="scripts/articleView.js"></script>
+  <script>
+    Article.fetchAll();
+  </script>
 </body>
 </html>
