@@ -1,30 +1,28 @@
 'use strict';
 
-const articleView = {};
+var articleView = {};
+
 
 articleView.handleMainNav = function() {
-  $('.main-nav').on('click', '.tab', function() {
-    $('.tab-content').hide();
-    $(`#${$(this).data('content')}`).fadeIn();
-  });
-  $('.main-nav .tab:first').click();
+  $('.main-nav .tab').on('click', function(){
+    $('.content').hide();
+    $('#' + $(this).attr('data-content')).show();
+  })
+  // $('.main-nav .tab:first').click();
 };
 
-
-articleView.initNewArticlePage = function() {
-  $('.tab-content').show();
-  $('#export-field').hide();
-  $('#article-json').on('focus', function(){
-    this.select();
-  });
-
-  $('#new-form').on('change', 'input, textarea', articleView.create);
+articleView.setTeasers = function() {
+  $('.article-body *:nth-of-type(n+2)').hide();
+  $('.read-on').on('click', function(event){
+    event.preventDefault();
+    var $theLink = $(this);
+    var $theArticleBody = $theLink.siblings('.article-body');
+    $theArticleBody.children().show();
+    $(this).hide()
+  })
 };
 
-articleView.initIndexPage = function() {
-  Article.all.forEach(function(article) {
-    $('#articles').append(article.toHtml())
-  });
+$(document).ready(function() {
   articleView.handleMainNav();
   articleView.setTeasers();
-};
+})

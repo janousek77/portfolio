@@ -15,7 +15,7 @@
     <h2 id="title">{{title}}</h2>
     <a href="{{link}}"><img src="{{image}}" alt=""></a>
     <div class="byline">
-    Deployed <time pubdate datetime="2000-01-01">{{publishedOn}}</time>
+    Deployed <time pubdate datetime="2000-01-01">{{deployedOn}}</time>
     </div>
     <section class="article-body">{{body}}</section>
   </script>
@@ -31,9 +31,8 @@
     <nav class="main-nav">
       <span class="icon-menu"></span>
       <ul>
-        <li class="tab" class="icon-home"><a href="#"> Home </a></li>
-        <li class="tab" data-content="articles"><a href="#" class="icon-rocket"> Projects</a></li>
         <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+        <li class="tab" data-content="articles"><a href="#" class="icon-rocket"> Projects</a></li>
         <li><a href="https://github.com/janousek77" target="_blank" class="icon-github"> GitHub</a></li>
       </ul>
     </nav>
@@ -69,10 +68,8 @@
   <aside class="right"></aside>
   <footer>
   </footer>
+  <script type="text/javascript" src="scripts/projectData.js"></script>
   <script type="text/javascript" src="scripts/app.js"></script>
   <script type="text/javascript" src="scripts/articleView.js"></script>
-  <script>
-    Article.fetchAll();
-  </script>
 </body>
 </html>
