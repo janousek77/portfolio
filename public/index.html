@@ -8,8 +8,6 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/modules.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <script id="article-template" type="text/x-handlebars-template">
     <h2 id="title">{{title}}</h2>
@@ -39,8 +37,7 @@
   </header>
   <aside class="left"></aside>
   <main id="home">
-  <section id="articles" class="tab content"></section>
-  <section id="about" class="top content">
+  <section id="about" class="top tab-content">
       <header>
         <h2>About Me</h2>
       </header>
@@ -64,14 +61,21 @@
     </div>
     </section>
     <div class="clearfix"></div>
+    <section id="articles" class="tab-content"></section>
   </main>
   <aside class="right"></aside>
   <footer>
   </footer>
-  <script type="text/javascript" src="scripts/view/articleView.js"></script>
-  <script type="text/javascript" src="scripts/model/app.js"></script>
-  <script>
-    Article.fetchAll();
-  </script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/vendor/scripts/handlebars.js"></script>
+  <script src="vendor/scripts/page.js"></script>
+  <script src="scripts/model/app.js"></script>
+  <script src="scripts/view/articleView.js"></script>
+  <script src="/scripts/controller/articleController.js"></script>
+  <script src="/scripts/controller/aboutController.js"></script>
+  <script src="/scripts/controller/route.js"></script>
+
 </body>
 </html>
