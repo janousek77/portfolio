@@ -4,8 +4,9 @@
   const articleController = {};
 
   articleController.show = function() {
-    $('.tab content').hide();
+    $('.tab-content').hide();
     $('#articles').fadeIn();
+    console.log(this);
   };
 
   module.articleController = articleController;
